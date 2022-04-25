@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gallery_app/constants/firebase.dart';
-import 'package:gallery_app/controllers/products_contoller.dart';
-import 'package:gallery_app/view/home/home_screen.dart';
-import 'package:gallery_app/view/images_store/images_home.dart';
+import 'package:gallery_app/routes.dart';
 import 'package:get/get.dart';
 
 void main() async {
@@ -20,7 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: ' My Gallery  ',
       theme: ThemeData(),
-      home: const HomeScreen(),
+      getPages: routes(),
+      initialRoute: Routes.HOME,
     );
   }
 }

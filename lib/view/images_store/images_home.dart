@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gallery_app/models/products.dart';
 import 'package:gallery_app/view/images_store/details_screen.dart';
 
-class Images_home_page extends StatelessWidget {
+class ImagesHomePage extends StatelessWidget {
+  const ImagesHomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
