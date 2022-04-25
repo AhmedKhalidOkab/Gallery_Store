@@ -1,19 +1,17 @@
-/*import 'package:gallery_app/constants/firebase.dart';
 import 'package:gallery_app/models/products.dart';
 import 'package:get/get.dart';
+import '../services/store_service.dart';
 
-class ProducsController extends GetxController {
-  static ProducsController instance = Get.find();
-  RxList<ProductModel> products = RxList<ProductModel>([]);
-  String collection = "products";
+class ProductController extends GetxController with StateMixin<dynamic> {
+  static ProductController instance = Get.find();
+  RxList<ImageDetails> products = RxList<ImageDetails>([]);
+  final StoreService _storeService = StoreService();
 
   @override
   onReady() {
     super.onReady();
-    products.bindStream(getAllProducts());
+    products.bindStream(getAllImages());
   }
 
-  Stream<List<ProductModel>> getAllProducts() =>
-      firebaseFirestore.collection(collection).snapshots().map((query) =>
-          query.docs.map((item) => ProductModel.fromMap(item.data())).toList());
-}*/
+  Stream<List<ImageDetails>> getAllImages() => _storeService.getImages();
+}

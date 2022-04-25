@@ -18,7 +18,7 @@ class CustomBottomCategory extends StatelessWidget {
       onTap: (() {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Images_home_page()),
+          MaterialPageRoute(builder: (context) => ImagesHomePage()),
         );
       }),
       child: Container(
